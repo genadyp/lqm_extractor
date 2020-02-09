@@ -105,10 +105,12 @@ def uncompress(path):
 
 
 def run(root):
-    for entry in os.scandir(root):
+    it = os.scandir(root)
+    for entry in it:
         if entry.is_file() and entry.name.endswith('.lqm'):
             uncompress(entry.path)
             process_uncompressed(temp_dir)
+    it.close()
 
 
 def ensure_dirs(dirs):
