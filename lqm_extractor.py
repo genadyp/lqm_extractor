@@ -64,7 +64,7 @@ def handle_jlqm(path):
     hash = hash_str(content)
     if not processed['texts'].get(hash):
         write_content(content)
-        processed['texts'][content] = True
+        processed['texts'][hash] = True
 
 
 def handle_audio(path):
